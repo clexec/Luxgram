@@ -129,12 +129,12 @@ jobs:
           mkdir -p prebuilt/arm64 prebuilt/sim_arm64
           chmod +x build-opus-bazel.sh
           ./build-opus-bazel.sh arm64 "$(pwd)" opus-1.5.1.tar.gz
-          cp Public/opus/lib/libopus.a prebuilt/arm64/libopus.a
-          rm -rf Public src built
+          cp built/lib/libopus.a prebuilt/arm64/libopus.a
+          rm -rf src built
           ./build-opus-bazel.sh ios_sim_arm64 "$(pwd)" opus-1.5.1.tar.gz
-          cp Public/opus/lib/libopus.a prebuilt/sim_arm64/libopus.a
-          rm -rf Public src built
-          echo "Opus built OK"
+          cp built/lib/libopus.a prebuilt/sim_arm64/libopus.a
+          rm -rf src built
+          echo "Opus built OK - arm64: $(ls -lh prebuilt/arm64/libopus.a)"
 
       # 8 — Build IPA ───────────────────────────────────────────────────────
       - name: Build production IPA
