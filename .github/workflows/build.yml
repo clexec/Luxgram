@@ -122,7 +122,21 @@ jobs:
           print('Config written: bundle_id =', cfg['bundle_id'])
           "
 
-      # 7 — Build IPA ───────────────────────────────────────────────────────
+      # 7 — Build opus prebuilt ─────────────────────────────────────────────
+      - name: Build opus
+        run: |
+          cd third-party/opus
+          mkdir -p prebuilt/arm64 prebuilt/sim_arm64
+          chmod +x build-opus-bazel.sh
+          ./build-opus-bazel.sh arm64 "$(pwd)" opus-1.5.1.tar.gz
+          cp Public/opus/lib/libopus.a prebuilt/arm64/libopus.a
+          rm -rf Public src built
+          ./build-opus-bazel.sh ios_sim_arm64 "$(pwd)" opus-1.5.1.tar.gz
+          cp Public/opus/lib/libopus.a prebuilt/sim_arm64/libopus.a
+          rm -rf Public src built
+          echo "Opus built OK"
+
+      # 8 — Build IPA ───────────────────────────────────────────────────────
       - name: Build production IPA
         run: |
           INPUT_BN="${{ github.event.inputs.build_number }}"
