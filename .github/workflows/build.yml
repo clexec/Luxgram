@@ -23,8 +23,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
+
+      - name: Init submodules
+        run: |
+          mkdir -p build-system/bazel-rules
+          git clone --depth 1 https://github.com/ali-fareed/rules_apple.git build-system/bazel-rules/rules_apple
+          git clone --depth 1 https://github.com/bazelbuild/rules_swift.git build-system/bazel-rules/rules_swift
+          git clone --depth 1 https://github.com/bazelbuild/apple_support.git build-system/bazel-rules/apple_support
+          git clone --depth 1 https://github.com/MobileNativeFoundation/rules_xcodeproj.git build-system/bazel-rules/rules_xcodeproj
+          git clone --depth 1 https://github.com/spotify/sourcekit-bazel-bsp.git build-system/bazel-rules/sourcekit-bazel-bsp
+          mkdir -p submodules/rlottie && git clone --depth 1 https://github.com/TelegramMessenger/rlottie.git submodules/rlottie/rlottie || true
+          mkdir -p submodules/LottieCpp && git clone --depth 1 https://github.com/ali-fareed/lottiecpp.git submodules/LottieCpp/lottiecpp || true
+          mkdir -p submodules/TgVoipWebrtc && git clone --depth 1 https://github.com/TelegramMessenger/tgcalls.git submodules/TgVoipWebrtc/tgcalls || true
+          mkdir -p third-party/libvpx && git clone --depth 1 https://github.com/webmproject/libvpx.git third-party/libvpx/libvpx || true
+          mkdir -p third-party/dav1d && git clone --depth 1 https://code.videolan.org/videolan/dav1d.git third-party/dav1d/dav1d || true
 
       # 2 — Xcode 16 ────────────────────────────────────────────────────────
       - name: Select Xcode 16
