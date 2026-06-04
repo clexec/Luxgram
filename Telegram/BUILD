@@ -319,7 +319,7 @@ alternate_icon_folders = [
     "LuxGramDuck",
 ]
 
-composer_icon_folders = ["LuxGram"]
+composer_icon_folders = []
 
 [
     filegroup(
