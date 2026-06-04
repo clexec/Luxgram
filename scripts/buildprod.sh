@@ -43,6 +43,7 @@ echo "Building LuxGram (release_arm64, buildNumber=$BUILD_NUMBER)..."
 mkdir -p build/artifacts
 python3 build-system/Make/Make.py \
   --cacheDir="$CACHE_DIR" \
+  --overrideXcodeVersion \
   build \
   --configurationPath="$CONFIGURATION_PATH" \
   --codesigningInformationPath="$CODESIGNING_PATH" \
