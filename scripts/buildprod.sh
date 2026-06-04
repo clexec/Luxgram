@@ -13,7 +13,7 @@ cd "$(dirname "$0")/.."
 
 CACHE_DIR="${CACHE_DIR:-$HOME/telegram-bazel-cache}"
 CONFIGURATION_PATH="build-system/ipa-build-configuration.json"
-CODESIGNING_PATH="build-system/real-codesigning"
+CODESIGNING_PATH="build-system/fake-codesigning"
 BUILD_NUMBER="${BUILD_NUMBER:-100005}"
 CLEAN=0
 
