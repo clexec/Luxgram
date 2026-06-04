@@ -1,0 +1,32 @@
+# Build
+bazel-*
+build/
+.build/
+*.ipa
+*.xcarchive
+
+# Secrets (never commit)
+build-system/real-codesigning/certs/*.p12
+build-system/real-codesigning/certs/*.cer
+build-system/real-codesigning/profiles/*.mobileprovision
+build-input/configuration-repository/
+build-input/configuration-repository-workdir/
+
+# IDE
+.DS_Store
+*.xcworkspace
+*.xcodeproj
+xcuserdata/
+DerivedData/
+
+# Logs
+*.log
+hs_err_*.log
+
+# Bazel
+/private/
+
+# Large binaries
+build-input/bazel-*
+scripts/Telegram
+third-party/opus/prebuilt/*/libopus.a

@@ -1,0 +1,15 @@
+{
+	"bundle_id": "org.9320293178a5be3a.LuxGram",
+	"api_id": "22871623",
+	"api_hash": "5a2718cff0d07abb7a3d2f8884c0baf0",
+	"team_id": "D6WNG3252A",
+	"app_center_id": "0",
+	"is_internal_build": "true",
+	"is_appstore_build": "false",
+	"appstore_id": "0",
+	"app_specific_url_scheme": "tg",
+	"premium_iap_product_id": "",
+	"enable_siri": false,
+	"enable_icloud": false,
+	"sg_config": ""
+}

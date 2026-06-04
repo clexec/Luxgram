@@ -1,0 +1,178 @@
+// MARK: Swiftgram
+import SGSimpleSettings
+import SGItemListUI
+import Foundation
+import UIKit
+import Display
+import SwiftSignalKit
+import TelegramCore
+import TelegramPresentationData
+import TelegramUIPreferences
+import ItemListUI
+import PresentationDataUtils
+import AccountContext
+
+private enum TabOrganizerSection: Int32, SGItemListSection {
+    case order
+    case visibility
+}
+
+private enum TabOrganizerBoolSetting: Hashable {
+    case showContactsTab
+    case showCallsTab
+}
+
+private typealias TabOrganizerEntry = SGItemListUIEntry<TabOrganizerSection, TabOrganizerBoolSetting, AnyHashable, AnyHashable, AnyHashable, AnyHashable>
+
+private func tabTitle(_ tabId: String, _ lang: String) -> String {
+    switch tabId {
+    case "chats":    return lang == "ru" ? "Чаты"      : "Chats"
+    case "contacts": return lang == "ru" ? "Контакты"  : "Contacts"
+    case "calls":    return lang == "ru" ? "Звонки"    : "Calls"
+    case "settings": return lang == "ru" ? "Настройки" : "Settings"
+    default: return tabId
+    }
+}
+
+private func tabIconName(_ tabId: String) -> String? {
+    switch tabId {
+    case "chats":    return "bubble.left.and.bubble.right.fill"
+    case "contacts": return "person.2.fill"
+    case "calls":    return "phone.fill"
+    case "settings": return "gearshape.fill"
+    default: return nil
+    }
+}
+
+private func tabOrganizerEntries(presentationData: PresentationData, settings: CallListSettings) -> [TabOrganizerEntry] {
+    let lang = presentationData.strings.baseLanguageCode
+    var entries: [TabOrganizerEntry] = []
+    let id = SGItemListCounter()
+
+    // — Order section —
+    entries.append(.header(id: id.count, section: .order,
+        text: lang == "ru" ? "ПОРЯДОК" : "ORDER", badge: nil))
+    entries.append(.notice(id: id.count, section: .order,
+        text: lang == "ru"
+            ? "Удерживайте и перетащите строку, чтобы изменить порядок вкладок."
+            : "Hold and drag a row to reorder tabs."))
+
+    let order = settings.tabOrder.isEmpty ? CallListSettings.tabOrderDefault : settings.tabOrder
+    for tabId in order {
+        entries.append(.reorderableRow(
+            id: id.count,
+            section: .order,
+            text: tabTitle(tabId, lang),
+            reorderId: tabId as AnyHashable,
+            iconName: tabIconName(tabId)
+        ))
+    }
+
+    // — Visibility section —
+    entries.append(.header(id: id.count, section: .visibility,
+        text: lang == "ru" ? "ВИДИМОСТЬ" : "VISIBILITY", badge: nil))
+
+    if order.contains("contacts") {
+        entries.append(.toggle(id: id.count, section: .visibility,
+            settingName: .showContactsTab,
+            value: settings.showContactsTab,
+            text: lang == "ru" ? "Показывать вкладку «Контакты»" : "Show Contacts tab",
+            enabled: true))
+    }
+    if order.contains("calls") {
+        entries.append(.toggle(id: id.count, section: .visibility,
+            settingName: .showCallsTab,
+            value: settings.showTab,
+            text: lang == "ru" ? "Показывать вкладку «Звонки»" : "Show Calls tab",
+            enabled: true))
+    }
+
+    return entries
+}
+
+public func TabOrganizerController(context: AccountContext, presentationData: PresentationData, onSave: @escaping () -> Void) -> ViewController {
+    let reloadPromise = ValuePromise(true, ignoreRepeated: false)
+    var backAction: (() -> Void)?
+
+    let arguments = SGItemListArguments<TabOrganizerBoolSetting, AnyHashable, AnyHashable, AnyHashable, AnyHashable>(
+        context: context,
+        setBoolValue: { setting, value in
+            let _ = updateCallListSettingsInteractively(accountManager: context.sharedContext.accountManager) { current in
+                switch setting {
+                case .showContactsTab: return current.withUpdatedShowContactsTab(value)
+                case .showCallsTab:    return current.withUpdatedShowTab(value)
+                }
+            }.start()
+            reloadPromise.set(true)
+        },
+        updateSliderValue: { _, _ in },
+        setOneFromManyValue: { _ in },
+        openDisclosureLink: { _ in },
+        action: { _ in },
+        searchInput: { _ in }
+    )
+
+    let signal = combineLatest(
+        reloadPromise.get(),
+        context.sharedContext.accountManager.sharedData(keys: [ApplicationSpecificSharedDataKeys.callListSettings]),
+        context.sharedContext.presentationData
+    )
+    |> map { _, sharedData, presentationData -> (ItemListControllerState, (ItemListNodeState, SGItemListArguments<TabOrganizerBoolSetting, AnyHashable, AnyHashable, AnyHashable, AnyHashable>)) in
+        let settings = sharedData.entries[ApplicationSpecificSharedDataKeys.callListSettings]?.get(CallListSettings.self) ?? .defaultSettings
+
+        let title = presentationData.strings.baseLanguageCode == "ru" ? "Органайзер таббара" : "Tab Bar Organizer"
+        let controllerState = ItemListControllerState(
+            presentationData: ItemListPresentationData(presentationData),
+            title: .text(title),
+            leftNavigationButton: ItemListNavigationButton(content: .text(presentationData.strings.Common_Back), style: .regular, enabled: true, action: {
+                backAction?()
+            }),
+            rightNavigationButton: nil,
+            backNavigationButton: ItemListBackButton(title: presentationData.strings.Common_Back)
+        )
+
+        let entries = tabOrganizerEntries(presentationData: presentationData, settings: settings)
+        let listState = ItemListNodeState(
+            presentationData: ItemListPresentationData(presentationData),
+            entries: entries,
+            style: .blocks,
+            ensureVisibleItemTag: nil,
+            initialScrollToItem: nil
+        )
+        return (controllerState, (listState, arguments))
+    }
+
+    let controller = ItemListController(context: context, state: signal)
+    controller.setReorderEntry { (fromIndex: Int, toIndex: Int, entries: [TabOrganizerEntry]) -> Signal<Bool, NoError> in
+        let reorderableListIndices = entries.enumerated().compactMap { i, e -> Int? in
+            if case .reorderableRow = e { return i }; return nil
+        }
+        guard let fromPos = reorderableListIndices.firstIndex(of: fromIndex),
+              let toPos = reorderableListIndices.firstIndex(of: toIndex),
+              fromPos != toPos,
+              reorderableListIndices.count >= 2 else { return .single(false) }
+        var tabOrder: [String] = entries.compactMap { e in
+            if case .reorderableRow(_, _, _, let id, _) = e, let tabId = id as? String { return tabId }; return nil
+        }
+        guard tabOrder.count == reorderableListIndices.count else { return .single(false) }
+        let moved = tabOrder.remove(at: fromPos)
+        tabOrder.insert(moved, at: toPos)
+        let _ = updateCallListSettingsInteractively(accountManager: context.sharedContext.accountManager) { current in
+            current.withUpdatedTabOrder(tabOrder)
+        }.start()
+        reloadPromise.set(true)
+        return .single(true)
+    }
+    controller.setReorderCompleted { (_: [TabOrganizerEntry]) in
+        onSave()
+    }
+    backAction = { [weak controller] in
+        guard let controller else { return }
+        if let nav = controller.navigationController, nav.viewControllers.count > 1 {
+            nav.popViewController(animated: true)
+        } else {
+            (controller.navigationController ?? controller).dismiss(animated: true)
+        }
+    }
+    return controller
+}

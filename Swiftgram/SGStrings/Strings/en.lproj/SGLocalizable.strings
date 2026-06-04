@@ -1,0 +1,391 @@
+"Settings.ContentSettings" = "Content Settings";
+
+"Settings.Tabs.Header" = "TABS";
+"Settings.Tabs.HideTabBar" = "Hide Tab bar";
+"Settings.Tabs.ShowContacts" = "Show Contacts Tab";
+"Settings.Tabs.ShowNames" = "Show Tab Names";
+"Settings.Tabs.SearchButton" = "Search Button";
+"Settings.Tabs.WideTabBar" = "Wide Tab bar";
+"Settings.Tabs.WideTabBar.Notice" = "Keeps the full width of Tab bar when some tabs are hidden.";
+
+"Settings.Folders.BottomTab" = "Folders at Bottom";
+"Settings.Folders.BottomTabStyle" = "Bottom Folders Style";
+
+/* Do not translate */
+"Settings.Folders.BottomTabStyle.ios" = "iOS";
+/* Do not translate */
+"Settings.Folders.BottomTabStyle.telegram" = "Telegram";
+/* Example: Hide "All Chats" */
+"Settings.Folders.AllChatsHidden" = "Hide \"%@\"";
+"Settings.Folders.RememberLast" = "Open Last Folder";
+"Settings.Folders.RememberLast.Notice" = "LuxGram will open the last used folder when you restart the app or switch accounts.";
+
+"Settings.Folders.CompactNames" = "Smaller spacing";
+"Settings.Folders.AllChatsTitle" = "\"All Chats\" title";
+"Settings.Folders.AllChatsTitle.short" = "Short";
+"Settings.Folders.AllChatsTitle.long" = "Long";
+/* Default behaviour for All Chats Folder Title. "All Chats" title: Default */
+"Settings.Folders.AllChatsTitle.none" = "Default";
+
+
+"Settings.ChatList.Header" = "CHAT LIST";
+"Settings.CompactChatList" = "Compact Chat List";
+"READ_ALL_HEADER" = "MARK ALL AS READ";
+"READ_ALL_LOCAL_TITLE" = "Mark All as Read (Locally)";
+"READ_ALL_LOCAL_SUBTITLE" = "Clear unread badges on this device only. Does not sync to server.";
+"READ_ALL_SERVER_TITLE" = "Mark All as Read (On Server)";
+"READ_ALL_SERVER_SUBTITLE" = "Notify Telegram server that all chats are read. Syncs to server.";
+
+"Settings.Profiles.Header" = "PROFILES";
+
+"Settings.Stories.Hide" = "Hide Stories";
+"Settings.Stories.WarnBeforeView" = "Ask Before Viewing";
+"Settings.Stories.DisableSwipeToRecord" = "Disable Swipe to Record";
+
+"Settings.Translation.QuickTranslateButton" = "Quick Translate button";
+"Settings.Translation.Backend" = "Service";
+/* Do not translate */
+"Settings.Translation.Backend.default" = "Telegram";
+/* Do not translate */
+"Settings.Translation.Backend.gtranslate" = "GTranslate";
+"Settings.Translation.Backend.system" = "System";
+"Settings.Translation.Backend.Notice" = "LuxGram will fallback to %@ if selected translation service is not available.";
+
+"Settings.Transcription.Header" = "VOICE-TO-TEXT";
+"Settings.Transcription.Backend" = "Service";
+/* Do not translate */
+"Settings.Transcription.Backend.default" = "Telegram";
+/* Do not translate */
+"Settings.Transcription.Backend.apple" = "Apple";
+"Settings.Transcription.Backend.Notice" = "LuxGram will fallback to %@ if selected transcription service is not available.";
+
+"Stories.Warning.Author" = "Author";
+"Stories.Warning.ViewStory" = "View Story?";
+/* Author will be able to see that you viewed their Story */
+"Stories.Warning.Notice" = "%@ WILL BE ABLE TO SEE that you viewed their Story.";
+"Stories.Warning.NoticeStealth" = "%@ will not be able to see that you viewed their Story.";
+
+"Settings.Photo.Quality.Notice" = "Quality of uploaded photos and stories.";
+"Settings.Photo.SendLarge" = "Send HD Photos";
+"Settings.Photo.SendLarge.Notice" = "Increase the side limit on compressed images to 2560px.";
+
+"Settings.VideoNotes.Header" = "ROUND VIDEOS";
+"Settings.VideoNotes.StartWithRearCam" = "Start with Rear Camera";
+
+"Settings.CustomColors.Header" = "ACCOUNT COLORS";
+"Settings.CustomColors.Saturation" = "SATURATION";
+/* Make sure to escape Percentage sign % */
+"Settings.CustomColors.Saturation.Notice" = "Set to 0%% to disable account colors.";
+
+"Settings.UploadsBoost" = "Upload Boost";
+"Settings.DownloadsBoost" = "Download Boost";
+"Settings.DownloadsBoost.Notice" = "Increases number of parallel connections and size of file chunks. In case your network can't handle the load, try different options that suits your connection.";
+"Settings.DownloadsBoost.none" = "Disabled";
+"Settings.DownloadsBoost.medium" = "Medium";
+"Settings.DownloadsBoost.maximum" = "Maximum";
+
+"Settings.ShowProfileID" = "Show Profile ID";
+"Settings.ShowDC" = "Show Data Center";
+"Settings.ShowCreationDate" = "Show Chat Creation Date";
+"Settings.ShowCreationDate.Notice" = "The creation date may be unknown for some chats.";
+
+"Settings.ShowRegDate" = "Show Registration Date";
+"Settings.ShowRegDate.Notice" = "The registration date is approximate.";
+
+"Settings.SendWithReturnKey" = "Send with \"return\" key";
+"Settings.HidePhoneInSettingsUI" = "Hide Phone in Settings";
+"Settings.HidePhoneInSettingsUI.Notice" = "This will only hide your phone number from the settings interface. To hide it from others, go to Privacy and Security.";
+
+"PasscodeSettings.AutoLock.InFiveSeconds" = "If away for 5 seconds";
+
+"ProxySettings.UseSystemDNS" = "Use system DNS";
+"ProxySettings.UseSystemDNS.Notice" = "Use system DNS to bypass timeout if you don't have access to Google DNS";
+
+/* Preserve markdown asterisks! Example: You **don't** need Telegram Premium! */
+"Common.NoTelegramPremiumNeeded" = "You **don't need** %@!";
+"Common.RestartRequired" = "Restart required";
+"Common.RestartNow" = "Restart Now";
+"Common.OpenTelegram" = "Open Telegram";
+"Common.UseTelegramForPremium" = "Please note that to get Telegram Premium, you must use the official Telegram app. Once you have obtained Telegram Premium, all its features will become available in LuxGram.";
+"Common.UpdateOS" = "iOS update required";
+"Common.KnowWhatYouDo" = "Please, change these settings only if you know what they do.";
+
+"Message.HoldToShowOrReport" = "Hold to Show or Report.";
+
+"Auth.AccountBackupReminder" = "Make sure you have a backup access method. Keep a SIM for SMS or an additional session logged in to avoid being locked out.";
+"Auth.UnofficialAppCodeTitle" = "You can get the code only with official app";
+
+"Settings.SmallReactions" = "Small Reactions";
+"Settings.HideReactions" = "Hide Reactions";
+
+"ContextMenu.SaveToCloud" = "Save to Cloud";
+"ContextMenu.SelectFromUser" = "Select from Author";
+
+"Settings.ContextMenu" = "CONTEXT MENU";
+"Settings.ContextMenu.Notice" = "Disabled entries will be available in \"LuxGram\" sub-menu.";
+
+
+"Settings.ChatSwipeOptions" = "Chat List Swipe Options";
+"Settings.DeleteChatSwipeOption" = "Swipe to Delete Chat";
+/* Re-word like this string on offical app https://translations.telegram.org/en/ios/groups_and_channels/Chat.NextChannelSameLocationSwipeProgress */
+"Settings.PullToNextChannel" = "Pull to Next Unread Channel";
+/* Re-word like this string on offical app https://translations.telegram.org/en/ios/groups_and_channels/Chat.NextUnreadTopicSwipeProgress */
+"Settings.PullToNextTopic" = "Pull to Next Topic";
+"Settings.GalleryCamera" = "Camera in Gallery";
+"Settings.GalleryCameraPreview" = "Camera Preview in Gallery";
+/* "Send Message As..." button */
+"Settings.SendAsButton" = "\"%@\" Button";
+"Settings.SnapDeletionEffect" = "Message Deletion Effects";
+
+"Settings.Stickers.Size" = "SIZE";
+"Settings.Stickers.Timestamp" = "Show Timestamp";
+
+"Settings.RecordingButton" = "Voice Recording Button";
+
+"Settings.DefaultEmojisFirst" = "Standard emojis first";
+"Settings.DefaultEmojisFirst.Notice" = "Show standard emojis before premium in emoji keyboard";
+
+/* Date when chat was created. "created: 24 May 2016" */
+"Chat.Created" = "created: %@";
+
+/* Date when user joined the chat. "Joined LuxGram Chat" */
+"Chat.JoinedDateTitle" = "Joined %@";
+/* Date when user registered in Telegram. Will be shown like "Registered\n24 May 2016" */
+"Chat.RegDate" = "Registered";
+
+"Settings.messageDoubleTapActionOutgoingEdit" = "Double-tap to edit message";
+
+"Settings.wideChannelPosts" = "Wide posts in channels";
+"Settings.ForceEmojiTab" = "Emoji tab first";
+
+"Settings.forceBuiltInMic" = "Force Device Microphone";
+"Settings.forceBuiltInMic.Notice" = "If enabled, app will use only device microphone even if headphones are connected.";
+
+"Settings.showChannelBottomButton" = "Channel Bottom Panel";
+
+"Settings.secondsInMessages" = "Seconds in Messages";
+
+"Settings.DeletedMessages.Header" = "DELETED MESSAGES";
+"Settings.DeletedMessages.Save" = "Save Deleted Messages";
+"Settings.DeletedMessages.Save.Notice" = "Messages marked as deleted remain visible in chat.";
+"Settings.DeletedMessages.SaveMedia" = "Save Media";
+"Settings.DeletedMessages.SaveReactions" = "Save Reactions";
+"Settings.DeletedMessages.SaveForBots" = "Save from Bots";
+"Settings.DeletedMessages.StorageSize" = "Storage Used";
+"Settings.DeletedMessages.Clear" = "Clear Saved Deleted Messages";
+"Settings.DeletedMessages.Clear.Title" = "Clear Saved Deleted Messages?";
+"Settings.DeletedMessages.Clear.Text" = "All messages saved as deleted will be permanently removed. This cannot be undone.";
+"ContextMenu.PermanentlyDelete" = "Permanently Delete";
+
+"Settings.CallConfirmation" = "Call Confirmation";
+"Settings.CallConfirmation.Notice" = "LuxGram will ask for your confirmation before making a call.";
+
+/* Confirmation before making a Call */
+"CallConfirmation.Audio.Title" = "Make a Call?";
+
+/* Confirmation before making a Video Call */
+"CallConfirmation.Video.Title" = "Make a Video Call?";
+
+"MutualContact.Label" = "mutual contact";
+
+"Settings.swipeForVideoPIP" = "Video PIP with Swipe";
+"Settings.swipeForVideoPIP.Notice" = "If enabled, swiping video will open it in Picture-in-Picture mode.";
+
+"SessionBackup.Title" = "Accounts Backup";
+"SessionBackup.Sessions.Title" = "Sessions";
+"SessionBackup.Actions.Backup" = "Backup to Keychain";
+"SessionBackup.Actions.Restore" = "Restore from Keychain";
+"SessionBackup.Actions.DeleteAll" = "Delete Keychain Backup";
+"SessionBackup.Actions.DeleteOne" = "Delete from Backup";
+"SessionBackup.Actions.RemoveFromApp" = "Remove from App";
+"SessionBackup.LastBackupAt" = "Last Backup: %@";
+"SessionBackup.RestoreOK" = "OK. Sessions restored: %@";
+"SessionBackup.LoggedIn" = "Logged In";
+"SessionBackup.LoggedOut" = "Logged Out";
+"SessionBackup.DeleteAll.Title" = "Delete All Sessions?";
+"SessionBackup.DeleteAll.Text" = "All sessions will be removed from Keychain.\n\nAccounts will not be logged out from LuxGram.";
+"SessionBackup.DeleteSingle.Title" = "Delete 1 (one) Session?";
+"SessionBackup.DeleteSingle.Text" = "%@ session will be removed from Keychain.\n\nAccount will not be logged out from LuxGram.";
+"SessionBackup.RemoveFromApp.Title" = "Remove account from App?";
+"SessionBackup.RemoveFromApp.Text" = "%@ session WILL BE REMOVED from LuxGram! Session will remain active, so you can restore it later.";
+"SessionBackup.Notice" = "Sessions are encrypted and stored in the device Keychain. Sessions never leave your device.\n\nIMPORTANT: To restore sessions on a new device or after an OS reset, you MUST enable encrypted backups, otherwise Keychain won't be transfered.\n\nNOTE: Sessions may still be revoked by Telegram or from another device.";
+
+"MessageFilter.Title" = "Message Filter";
+"MessageFilter.SubTitle" = "Remove distractions and reduce visibility of messages containing keywords below.\nKeywords are case-sensitive.";
+"MessageFilter.Keywords.Title" = "Keywords";
+"MessageFilter.InputPlaceholder" = "Enter keyword";
+
+"InputToolbar.Title" = "Formatting Panel";
+
+"Notifications.MentionsAndReplies.Title" = "@Mentions and Replies";
+"Notifications.MentionsAndReplies.value.default" = "Default";
+"Notifications.MentionsAndReplies.value.silenced" = "Muted";
+"Notifications.MentionsAndReplies.value.disabled" = "Disabled";
+"Notifications.PinnedMessages.Title" = "Pinned Messages";
+"Notifications.PinnedMessages.value.default" = "Default";
+"Notifications.PinnedMessages.value.silenced" = "Muted";
+"Notifications.PinnedMessages.value.disabled" = "Disabled";
+
+
+"PayWall.Text" = "Supercharged with Pro features";
+
+"PayWall.SessionBackup.Title" = "Accounts Backup";
+"PayWall.SessionBackup.Notice" = "Log-in to accounts without code, even after reinstall. Secure storage with on-device Keychain.";
+"PayWall.SessionBackup.Description" = "Changing device or deleting LuxGram is no longer an issue. Restore all Sessions that are still Active on Telegram servers.";
+
+"PayWall.MessageFilter.Title" = "Message Filter";
+"PayWall.MessageFilter.Notice" = "Reduce visibility of SPAM, promotions and annoying messages.";
+"PayWall.MessageFilter.Description" = "Create a list of keywords you don't want to see often and LuxGram will reduce distractions.";
+
+"PayWall.Notifications.Title" = "Disable @mentions and replies";
+"PayWall.Notifications.Notice" = "Hide or mute non-important notifications.";
+"PayWall.Notifications.Description" = "No more Pinned Messages or @mentions when you need some peace of mind.";
+
+"PayWall.InputToolbar.Title" = "Formatting Panel";
+"PayWall.InputToolbar.Notice" = "Bold, Italic, Links? Formatting with just a single tap.";
+"PayWall.InputToolbar.Description" = "Apply and clear Formatting or insert new lines like a Pro.";
+
+"PayWall.AppIcons.Title" = "Unique App Icons and Badges";
+"PayWall.AppIcons.Notice" = "Customize LuxGram look on your home screen and screenshots.";
+
+"PayWall.About.Title" = "About LuxGram Pro";
+"PayWall.About.Notice" = "Free version of LuxGram provides dozens of features and improvements over Telegram app. Innovating and keeping LuxGram in sync with monthly Telegram updates is a huge effort that requires a lot of time and expensive hardware.\n\nLuxGram is an open-source app that respects your privacy and doesn't bother you with ads. Subscribing to LuxGram Pro you get access to exclusive features and support an independent developer.";
+/* DO NOT TRANSLATE */
+"PayWall.About.Signature" = "@Kylmakalle";
+/* DO NOT TRANSLATE */
+"PayWall.About.SignatureURL" = "https://t.me/Kylmakalle";
+
+"PayWall.ProSupport.Title" = "Troubles with payment?";
+"PayWall.ProSupport.Contact" = "No worries!";
+
+"PayWall.RestorePurchases" = "Restore Purchases";
+"PayWall.Terms" = "Terms of Service";
+"PayWall.Privacy" = "Privacy Policy";
+"PayWall.TermsURL" = "https://swiftgram.app/terms";
+"PayWall.PrivacyURL" = "https://swiftgram.app/privacy";
+"PayWall.Notice.Markdown" = "By subscribing to LuxGram Pro you agree to the [LuxGram Terms of Service](%1$@) and [Privacy Policy](%2$@).";
+"PayWall.Notice.Raw" = "By subscribing to LuxGram Pro you agree to the LuxGram Terms of Service and Privacy Policy.";
+
+"PayWall.Button.OpenPro" = "Use Pro features";
+"PayWall.Button.Purchasing" = "Purchasing...";
+"PayWall.Button.Restoring" = "Restoring Purchases...";
+"PayWall.Button.Validating" = "Validating Purchase...";
+"PayWall.Button.PaymentsUnavailable" = "Payments unavailable";
+"PayWall.Button.BuyInAppStore" = "Subscribe in App Store version";
+"PayWall.Button.Subscribe" = "Subscribe for %@ / month";
+"PayWall.Button.ContactingAppStore" = "Contacting App Store...";
+
+"Paywall.Error.Title" = "Error";
+"PayWall.ValidationError" = "Validation Error";
+"PayWall.ValidationError.TryAgain" = "Something went wrong during purchase validation. No worries! Try to Restore Purchases a bit later.";
+"PayWall.ValidationError.Expired" = "Your subscription expired. Subscribe again to regain access to Pro features.";
+
+"AppBadge.Title" = "App Badge";
+"AppBadge.Notice" = "Customize App Badge shown on screenshots";
+
+"Settings.NY.Header" = "HOLIDAY EFFECTS";
+"Settings.NY.Style" = "Style";
+"Settings.NY.Style.default" = "Disabled";
+"Settings.NY.Style.snow" = "Snow";
+"Settings.NY.Style.lightning" = "Lightning";
+"Settings.NY.Notice" = "Available for a limited time only!";
+
+/* Ghost Mode */
+"DISABLE_ONLINE_STATUS_TITLE" = "Hide Online Status";
+"DISABLE_ONLINE_STATUS_SUBTITLE" = "Don't show others that you're online.";
+
+"DISABLE_TYPING_STATUS_TITLE" = "Hide Typing Status";
+"DISABLE_TYPING_STATUS_SUBTITLE" = "Don't show that you're typing a message.";
+
+"DISABLE_RECORDING_VIDEO_STATUS_TITLE" = "Hide Video Recording Status";
+"DISABLE_RECORDING_VIDEO_STATUS_SUBTITLE" = "Don't show that you're recording a video.";
+
+"DISABLE_UPLOADING_VIDEO_STATUS_TITLE" = "Hide Video Uploading Status";
+"DISABLE_UPLOADING_VIDEO_STATUS_SUBTITLE" = "Hide when uploading video";
+
+"DISABLE_VC_MESSAGE_RECORDING_STATUS_TITLE" = "Hide Voice Message Recording";
+"DISABLE_VC_MESSAGE_RECORDING_STATUS_SUBTITLE" = "Don't show that you're recording a voice message.";
+
+"DISABLE_VC_MESSAGE_UPLOADING_STATUS_TITLE" = "Hide Voice Message Uploading";
+"DISABLE_VC_MESSAGE_UPLOADING_STATUS_SUBTITLE" = "Don't show that you're uploading a voice message.";
+
+"DISABLE_UPLOADING_PHOTO_STATUS_TITLE" = "Hide Photo Uploading Status";
+"DISABLE_UPLOADING_PHOTO_STATUS_SUBTITLE" = "Hide when uploading photo";
+
+"DISABLE_UPLOADING_FILE_STATUS_TITLE" = "Hide File Uploading Status";
+"DISABLE_UPLOADING_FILE_STATUS_SUBTITLE" = "Don't show that you're uploading a file.";
+
+"DISABLE_CHOOSING_LOCATION_STATUS_TITLE" = "Hide Location Selection";
+"DISABLE_CHOOSING_LOCATION_STATUS_SUBTITLE" = "Don't show that you're choosing a location.";
+
+"DISABLE_CHOOSING_CONTACT_TITLE" = "Hide Contact Selection";
+"DISABLE_CHOOSING_CONTACT_SUBTITLE" = "Don't show that you're choosing a contact.";
+
+"DISABLE_PLAYING_GAME_STATUS_TITLE" = "Hide Game Status";
+"DISABLE_PLAYING_GAME_STATUS_SUBTITLE" = "Don't show that you're playing a game.";
+
+"DISABLE_RECORDING_ROUND_VIDEO_STATUS_TITLE" = "Hide Round Video Recording";
+"DISABLE_RECORDING_ROUND_VIDEO_STATUS_SUBTITLE" = "Don't show that you're recording a round video.";
+
+"DISABLE_UPLOADING_ROUND_VIDEO_STATUS_TITLE" = "Hide Round Video Uploading";
+
+"DISABLE_SPEAKING_IN_GROUP_CALL_STATUS_TITLE" = "Hide Voice in Group Call";
+"DISABLE_SPEAKING_IN_GROUP_CALL_STATUS_SUBTITLE" = "Don't show that you're speaking in a group call.";
+
+"DISABLE_CHOOSING_STICKER_STATUS_TITLE" = "Hide Sticker Selection";
+"DISABLE_CHOOSING_STICKER_STATUS_SUBTITLE" = "Don't show that you're choosing a sticker.";
+
+"DISABLE_EMOJI_INTERACTION_STATUS_TITLE" = "Hide Emoji Interaction";
+"DISABLE_EMOJI_INTERACTION_STATUS_SUBTITLE" = "Don't show that you're interacting with emoji.";
+
+"DISABLE_EMOJI_ACKNOWLEDGEMENT_STATUS_TITLE" = "Hide Emoji Reaction";
+"DISABLE_EMOJI_ACKNOWLEDGEMENT_STATUS_SUBTITLE" = "Don't show that you're reacting to a message with emoji.";
+
+/* READ_RECEIPTS Section */
+"READ_RECEIPTS" = "Read Receipts";
+
+"DISABLE_MESSAGE_READ_RECEIPT_TITLE" = "Disable Message Read Receipts";
+"DISABLE_MESSAGE_READ_RECEIPT_SUBTITLE" = "Don't notify that you've read a message.";
+
+"DISABLE_STORY_READ_RECEIPT_TITLE" = "Disable Story Read Receipts";
+"DISABLE_STORY_READ_RECEIPT_SUBTITLE" = "Don't notify that you've viewed a story.";
+
+"DISABLE_ALL_ADS_TITLE" = "Disable All Ads";
+"DISABLE_ALL_ADS_SUBTITLE" = "Remove ads and promotional content from the app.";
+
+"HIDE_PROXY_SPONSOR_TITLE" = "Hide Proxy Sponsor";
+"HIDE_PROXY_SPONSOR_SUBTITLE" = "Hide the sponsored channel that appears in the chat list when using an MTProto proxy.";
+
+"ENABLE_SAVING_PROTECTED_CONTENT_TITLE" = "Allow Saving Protected Content";
+"ENABLE_SAVING_PROTECTED_CONTENT_SUBTITLE" = "Bypass restrictions and save protected content.";
+"DISABLE_SCREENSHOT_DETECTION_TITLE" = "Disable Screenshot Detection";
+"DISABLE_SCREENSHOT_DETECTION_SUBTITLE" = "Prevent Telegram from detecting and notifying about screenshots.";
+"ENABLE_SAVING_SELF_DESTRUCTING_MESSAGES_TITLE" = "Allow Saving Self-Destructing Messages";
+"ENABLE_SAVING_SELF_DESTRUCTING_MESSAGES_SUBTITLE" = "Save messages that are set to auto-delete after viewing.";
+"DISABLE_SECRET_CHAT_BLUR_ON_SCREENSHOT_TITLE" = "Disable Secret Chat Blur on Screenshot";
+"DISABLE_SECRET_CHAT_BLUR_ON_SCREENSHOT_SUBTITLE" = "Keep messages visible when taking screenshots in secret chats.";
+
+"Settings.Other.LocalPremium" = "LOCAL PREMIUM";
+"Settings.Other.EnableLocalPremium" = "Enable Local Premium";
+"Settings.Other.LocalPremium.Notice" = "Unlock premium limits (folders, chats per folder, pinned chats) and show Premium star icon without Telegram Premium subscription.";
+
+/* Scroll to Top */
+"SCROLL_TO_TOP_TITLE" = "Scroll to Top Button";
+"SCROLL_TO_TOP_NOTICE" = "Shows a button with up arrow icon near avatar for quick scroll to the beginning of conversation.";
+
+/* Add music from device to profile */
+"ADD_MUSIC_FROM_DEVICE_TITLE" = "Add music from device to profile";
+"ADD_MUSIC_FROM_DEVICE_NOTICE" = "In your profile, in the music section, an «Add from device» button will appear — you can pick an .mp3 from your phone and add it to your profile music list.";
+
+/* Overlay player: Add from device button (profile music) */
+"MediaPlayer.SavedMusic.AddFromDevice" = "Add from device";
+
+/* Font: import bold from file */
+"FONT_IMPORT_BOLD_FROM_FILE" = "Import bold from file (.ttf)";
+
+/* Video wallpaper: alert when user selects audio instead of video */
+"WALLPAPER_SELECT_VIDEO_NOT_AUDIO" = "Please select a video file, not audio.";"Settings.ChatList.Lines" = "Chat List Lines";
+"Settings.ChatList.Lines.1" = "1 line";
+"Settings.ChatList.Lines.2" = "2 lines";
+"Settings.ChatList.Lines.3" = "3 lines (Default)";
+"Settings.CompactMessagePreview" = "Compact Message Preview";

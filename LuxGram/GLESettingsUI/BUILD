@@ -1,0 +1,48 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "GLESettingsUI",
+    module_name = "GLESettingsUI",
+    srcs = glob([
+        "Sources/**/*.swift",
+    ]),
+    copts = [
+        "-warnings-as-errors",
+    ],
+    deps = [
+        "//LuxGram/ChatPassword:ChatPassword",
+        "//LuxGram/DoubleBottom:DoubleBottom",
+        "//LuxGram/SGDeletedMessages:SGDeletedMessages",
+        "//LuxGram/SGFakeLocation:SGFakeLocation",
+        "//LuxGram/SGSupporters:SGSupporters",
+        "//LuxGram/VoiceMorpher:VoiceMorpher",
+        "//Swiftgram/SGItemListUI:SGItemListUI",
+        "//Swiftgram/SGLogging:SGLogging",
+        "//Swiftgram/SGSimpleSettings:SGSimpleSettings",
+        "//Swiftgram/SGStrings:SGStrings",
+        "//Swiftgram/SGAPIToken:SGAPIToken",
+        "//Swiftgram/SGSwiftUI:SGSwiftUI",
+        "//submodules/SSignalKit/SwiftSignalKit:SwiftSignalKit",
+        "//submodules/AsyncDisplayKit:AsyncDisplayKit",
+        "//submodules/Display:Display",
+        "//submodules/Postbox:Postbox",
+        "//submodules/TelegramCore:TelegramCore",
+        "//submodules/MtProtoKit:MtProtoKit",
+        "//submodules/TelegramPresentationData:TelegramPresentationData",
+        "//submodules/TelegramUIPreferences:TelegramUIPreferences",
+        "//submodules/ItemListUI:ItemListUI",
+        "//submodules/PresentationDataUtils:PresentationDataUtils",
+        "//submodules/OverlayStatusController:OverlayStatusController",
+        "//submodules/AccountContext:AccountContext",
+        "//submodules/AppBundle:AppBundle",
+        "//submodules/UndoUI:UndoUI",
+        "//submodules/LegacyUI:LegacyUI",
+        "//submodules/LocalizedPeerData:LocalizedPeerData",
+        "//submodules/PasscodeUI:PasscodeUI",
+        "//submodules/SettingsUI:SettingsUI",
+        "//submodules/TelegramStringFormatting:TelegramStringFormatting",
+    ],
+    visibility = [
+        "//visibility:public",
+    ],
+)
