@@ -126,15 +126,25 @@ jobs:
       - name: Build opus
         run: |
           cd third-party/opus
-          mkdir -p prebuilt/arm64 prebuilt/sim_arm64
+          mkdir -p prebuilt/arm64 prebuilt/sim_arm64 src built
           chmod +x build-opus-bazel.sh
+          # arm64 for device
+          CC="$(xcrun --sdk iphoneos --find clang)" \
+          CXX="$(xcrun --sdk iphoneos --find clang++)" \
+          AR="$(xcrun --find ar)" \
+          RANLIB="$(xcrun --find ranlib)" \
           ./build-opus-bazel.sh arm64 "$(pwd)" opus-1.5.1.tar.gz
           cp built/lib/libopus.a prebuilt/arm64/libopus.a
           rm -rf src built
-          ./build-opus-bazel.sh ios_sim_arm64 "$(pwd)" opus-1.5.1.tar.gz
+          # sim_arm64 for simulator
+          CC="$(xcrun --sdk iphonesimulator --find clang)" \
+          CXX="$(xcrun --sdk iphonesimulator --find clang++)" \
+          AR="$(xcrun --find ar)" \
+          RANLIB="$(xcrun --find ranlib)" \
+          ./build-opus-bazel.sh sim_arm64 "$(pwd)" opus-1.5.1.tar.gz
           cp built/lib/libopus.a prebuilt/sim_arm64/libopus.a
           rm -rf src built
-          echo "Opus built OK - arm64: $(ls -lh prebuilt/arm64/libopus.a)"
+          echo "Opus built OK: $(ls -lh prebuilt/arm64/libopus.a)"
 
       # 8 — Build IPA ───────────────────────────────────────────────────────
       - name: Build production IPA
