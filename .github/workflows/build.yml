@@ -43,18 +43,27 @@ jobs:
       # 2 — Xcode 16 ────────────────────────────────────────────────────────
       - name: Select Xcode 16
         run: |
-          # Try 16.3 first, fall back to whatever is available
-          if [ -d /Applications/Xcode_16.3.app ]; then
-            sudo xcode-select -s /Applications/Xcode_16.3.app/Contents/Developer
-          elif [ -d /Applications/Xcode_16.2.app ]; then
-            sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
-          else
+          # Prefer Xcode 16.2 (stable) over 16.3 beta to ensure sim runtime
+          for ver in "16.2" "16.1" "16.0"; do
+            if [ -d "/Applications/Xcode_${ver}.app" ]; then
+              sudo xcode-select -s "/Applications/Xcode_${ver}.app/Contents/Developer"
+              break
+            fi
+          done
+          if ! xcode-select -p | grep -q "Contents/Developer"; then
             sudo xcode-select -s $(ls -d /Applications/Xcode*.app | sort -V | tail -1)/Contents/Developer
           fi
           xcode-select -p
           xcodebuild -version
 
-      # 3 — JDK 21 (Bazel needs it) ─────────────────────────────────────────
+      # 3 — Accept license & check sim ──────────────────────────────────
+      - name: Prepare Xcode
+        run: |
+          sudo xcodebuild -license accept 2>&1 || true
+          xcodebuild -runFirstLaunch 2>&1 || true
+          xcrun simctl list runtimes 2>&1 | grep "iOS" || echo "No iOS sim runtimes listed"
+
+      # 4 — JDK 21 (Bazel needs it) ─────────────────────────────────────────
       - name: Setup JDK 21
         uses: actions/setup-java@v4
         with:
