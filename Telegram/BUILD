@@ -309,15 +309,7 @@ filegroup(
 
 # MARK: Swiftgram alternative icons
 # MARK: LuxGram alternative icons
-alternate_icon_folders = [
-    "LuxGramDarkPurple",
-    "LuxGramBlack",
-    "LuxGramGreen",
-    "LuxGramPink",
-    "LuxGramPurple",
-    "LuxGramRed",
-    "LuxGramDuck",
-]
+alternate_icon_folders = []
 
 composer_icon_folders = []
 
