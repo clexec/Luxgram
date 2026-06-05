@@ -2072,7 +2072,7 @@ ios_application(
             ":BroadcastUploadExtension",
         ],
     }),
-    watch_application = ":TelegramWatchApp", # MARK: Swiftgram
+    
     deps = [
         ":Main",
         ":Lib",
