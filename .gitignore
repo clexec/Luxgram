@@ -1,9 +1,13 @@
 # Build
 bazel-*
-build/
+/build/
 .build/
 *.ipa
 *.xcarchive
+
+# Do not ignore vendored libvpx build scripts (required by its configure)
+!third-party/libvpx/libvpx/build/
+!third-party/libvpx/libvpx/build/**
 
 # Secrets (never commit)
 build-system/real-codesigning/certs/*.p12
